@@ -1,15 +1,14 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Details from "./components/shipment_details/Details";
-import "../src/components/shipment_details/Shipment_details.css";
-import { Table } from "./components/shipment_details/table/Table";
+import { ShipmentList } from "./pages/ShipmentList/ShipmentList";
+import { ShipmentDetails } from "./pages/ShipmentDetails/ShipmentDetails";
 
 function App() {
   return (
     <div>
-      <Table />
-      <Details />
+      <ShipmentList />
+      <ShipmentDetails />
     </div>
   );
 }

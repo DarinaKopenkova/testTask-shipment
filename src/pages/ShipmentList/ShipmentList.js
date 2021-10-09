@@ -1,10 +1,10 @@
 import React from "react";
-import { Table as BootstrapTable, Button } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
+import "./ShipmentList.css";
 
-export function Table() {
-  console.log("ttt");
+export function ShipmentList() {
   return (
-    <BootstrapTable striped bordered>
+    <Table striped bordered>
       <thead>
         <tr>
           <th>orderNo</th>
@@ -27,6 +27,6 @@ export function Table() {
         <Button variant="info">Info</Button>
         <Button variant="danger">Delete</Button>
       </tbody>
-    </BootstrapTable>
+    </Table>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Row, Col } from "react-bootstrap";
+import "./ShipmentDetails.css";
 
-export default function Details() {
+export function ShipmentDetails() {
   return (
     <div>
       <p>shipment details</p>
