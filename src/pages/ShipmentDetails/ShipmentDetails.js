@@ -1,12 +1,12 @@
 import React from "react";
 import { Form, Row, Col } from "react-bootstrap";
-import "./ShipmentDetails.css";
+import styles from "./ShipmentDetails.module.css";
 
 export function ShipmentDetails() {
   return (
     <div>
-      <p>shipment details</p>
-      <Form className="m-4">
+      <h5 className={styles.title}>shipment details</h5>
+      <Form className={"m-4 " + styles.form}>
         <Row>
           <Col>
             <Form.Label>orderNo</Form.Label>

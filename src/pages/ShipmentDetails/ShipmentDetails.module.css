@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-p {
+.title {
     color: #7B8799;
     font-size: 15px;
     text-transform: uppercase;
@@ -10,6 +10,6 @@ p {
     margin-left: 15px;
 }
 
-form {
+.form {
     color: #666687;
 }

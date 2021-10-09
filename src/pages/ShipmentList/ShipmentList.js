@@ -1,6 +1,6 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
-import "./ShipmentList.css";
+import styles from "./ShipmentList.module.css";
 
 export function ShipmentList() {
   return (
@@ -23,9 +23,11 @@ export function ShipmentList() {
           <td>@mdo-45678-45678</td>
           <td>shipped</td>
           <td>Royal Bank Of Canada</td>
+          <td>
+            <Button variant="info">Info</Button>
+            <Button variant="danger">Delete</Button>
+          </td>
         </tr>
-        <Button variant="info">Info</Button>
-        <Button variant="danger">Delete</Button>
       </tbody>
     </Table>
   );
