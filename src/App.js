@@ -5,6 +5,7 @@ import { ShipmentList } from "./pages/ShipmentList/ShipmentList";
 import { ShipmentDetails } from "./pages/ShipmentDetails/ShipmentDetails";
 import axios from "axios";
 import { Loader } from "./components/Loader/Loader";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -26,8 +27,17 @@ function App() {
 
   return (
     <div className={styles.container}>
-      {isLoading ? <Loader /> : <ShipmentList list={list} />}
-      <ShipmentDetails />
+      {isLoading && <Loader />}
+      <Router>
+        <Switch>
+          <Route path="/:id">
+            <ShipmentDetails list={list} />
+          </Route>
+          <Route path="/">
+            <ShipmentList list={list} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

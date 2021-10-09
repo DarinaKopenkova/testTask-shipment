@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { ShipmentList } from "../ShipmentList";
+import { Link } from "react-router-dom";
 
 export function ShipmentListItem(props) {
   return (
@@ -11,7 +13,9 @@ export function ShipmentListItem(props) {
       <td>{props.item.status}</td>
       <td>{props.item.consignee}</td>
       <td>
-        <Button variant="info">Info</Button>
+        <Link to={"/" + props.item.orderNo}>
+          <Button variant="info">Info</Button>
+        </Link>
         <Button variant="danger">Delete</Button>
       </td>
     </tr>
