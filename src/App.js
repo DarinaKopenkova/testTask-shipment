@@ -19,7 +19,6 @@ function App() {
         setIsLoading(false);
       })
       .catch(function (error) {
-        // handle error
         setIsLoading(false);
         console.log(error);
       });

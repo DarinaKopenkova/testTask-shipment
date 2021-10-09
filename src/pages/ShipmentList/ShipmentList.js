@@ -5,15 +5,16 @@ import { ShipmentListItem } from "./components/ShipmentListItem";
 
 export function ShipmentList(props) {
   return (
-    <Table striped bordered>
+    <Table table-primary variant>
       <thead>
-        <tr>
+        <tr className={styles.header}>
           <th>orderNo</th>
           <th>delivery date</th>
           <th>customer</th>
           <th>trackingNo</th>
           <th>status</th>
           <th>consignee</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

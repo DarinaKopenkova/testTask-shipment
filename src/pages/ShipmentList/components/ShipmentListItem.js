@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { ShipmentList } from "../ShipmentList";
 import { Link } from "react-router-dom";
+import styles from "../ShipmentList.module.css";
 
 export function ShipmentListItem(props) {
   return (
@@ -14,9 +14,11 @@ export function ShipmentListItem(props) {
       <td>{props.item.consignee}</td>
       <td>
         <Link to={"/" + props.item.orderNo}>
-          <Button variant="info">Info</Button>
+          <Button className={styles.buttonInfo} variant="info">
+            🛈
+          </Button>
         </Link>
-        <Button variant="danger">Delete</Button>
+        <Button variant="danger">☓</Button>
       </td>
     </tr>
   );
