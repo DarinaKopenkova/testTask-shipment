@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    color: #7B8799;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+form {
+    color: #666687;
+}
