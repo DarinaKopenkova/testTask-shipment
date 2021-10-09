@@ -1,8 +1,9 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import styles from "./ShipmentList.module.css";
+import { ShipmentListItem } from "./components/ShipmentListItem";
 
-export function ShipmentList() {
+export function ShipmentList(props) {
   return (
     <Table striped bordered>
       <thead>
@@ -16,18 +17,9 @@ export function ShipmentList() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>13456789098765432345</td>
-          <td>5/2/2019</td>
-          <td>Otto</td>
-          <td>@mdo-45678-45678</td>
-          <td>shipped</td>
-          <td>Royal Bank Of Canada</td>
-          <td>
-            <Button variant="info">Info</Button>
-            <Button variant="danger">Delete</Button>
-          </td>
-        </tr>
+        {props.list.map((item) => {
+          return <ShipmentListItem item={item} key={item.orderNo} />;
+        })}
       </tbody>
     </Table>
   );
