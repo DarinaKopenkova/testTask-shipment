@@ -23,7 +23,12 @@ function App() {
         console.log(error);
       });
   }, []);
-
+  function deleteItem(orderNo) {
+    const newList = list.filter((item) => {
+      return item.orderNo !== orderNo;
+    });
+    setList(newList);
+  }
   return (
     <div className={styles.container}>
       {isLoading && <Loader />}
@@ -33,7 +38,7 @@ function App() {
             <ShipmentDetails list={list} />
           </Route>
           <Route path="/">
-            <ShipmentList list={list} />
+            <ShipmentList list={list} onDelete={deleteItem} />
           </Route>
         </Switch>
       </Router>

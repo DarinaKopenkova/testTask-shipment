@@ -18,7 +18,9 @@ export function ShipmentListItem(props) {
             🛈
           </Button>
         </Link>
-        <Button variant="danger">☓</Button>
+        <Button variant="danger" onClick={props.onDelete}>
+          ☓
+        </Button>
       </td>
     </tr>
   );

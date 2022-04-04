@@ -19,7 +19,13 @@ export function ShipmentList(props) {
       </thead>
       <tbody>
         {props.list.map((item) => {
-          return <ShipmentListItem item={item} key={item.orderNo} />;
+          return (
+            <ShipmentListItem
+              item={item}
+              key={item.orderNo}
+              onDelete={() => props.onDelete(item.orderNo)}
+            />
+          );
         })}
       </tbody>
     </Table>
