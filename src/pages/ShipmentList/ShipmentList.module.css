@@ -6,5 +6,35 @@
 .buttonInfo {
     color: white;
     margin-right: 10px;
-    ;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title__name {
+    flex-grow: 1;
+}
+
+.title__arrows {
+    flex-shrink: 0;
+}
+
+.arrowUp {
+    height: 10px;
+}
+
+.arrowDown {
+    height: 10px;
+}
+
+.arrowDown:active {
+    fill: rgb(118, 133, 163);
+    transition: color 0s
+}
+
+.arrowUp:active {
+    fill: rgb(118, 133, 163);
+    transition: color 0s
 }
