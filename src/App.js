@@ -23,12 +23,50 @@ function App() {
         console.log(error);
       });
   }, []);
+
   function deleteItem(orderNo) {
     const newList = list.filter((item) => {
       return item.orderNo !== orderNo;
     });
     setList(newList);
   }
+
+  function onSort(key, order) {
+    if (order === "ASC") {
+      onSortUp(key);
+    } else {
+      onSortDown(key);
+    }
+  }
+
+  function onSortUp(key) {
+    function SortArray(x, y) {
+      if (x[key] < y[key]) {
+        return -1;
+      }
+      if (x[key] > y[key]) {
+        return 1;
+      }
+      return 0;
+    }
+    let newList = [...list].sort(SortArray);
+    setList(newList);
+  }
+
+  function onSortDown(key) {
+    function SortDownArray(x, y) {
+      if (x[key] < y[key]) {
+        return 1;
+      }
+      if (x[key] > y[key]) {
+        return -1;
+      }
+      return 0;
+    }
+    let newList = [...list].sort(SortDownArray);
+    setList(newList);
+  }
+
   return (
     <div className={styles.container}>
       {isLoading && <Loader />}
@@ -38,7 +76,13 @@ function App() {
             <ShipmentDetails list={list} />
           </Route>
           <Route path="/">
-            <ShipmentList list={list} onDelete={deleteItem} />
+            <ShipmentList
+              list={list}
+              onDelete={deleteItem}
+              onSortUp={onSortUp}
+              onSortDown={onSortDown}
+              onSort={onSort}
+            />
           </Route>
         </Switch>
       </Router>
