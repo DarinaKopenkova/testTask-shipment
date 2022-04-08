@@ -76,13 +76,7 @@ function App() {
             <ShipmentDetails list={list} />
           </Route>
           <Route path="/">
-            <ShipmentList
-              list={list}
-              onDelete={deleteItem}
-              onSortUp={onSortUp}
-              onSortDown={onSortDown}
-              onSort={onSort}
-            />
+            <ShipmentList list={list} onDelete={deleteItem} onSort={onSort} />
           </Route>
         </Switch>
       </Router>
